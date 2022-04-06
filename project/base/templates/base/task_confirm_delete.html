@@ -1,0 +1,24 @@
+{% extends 'base/main.html' %}
+
+
+
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}" style="font-weight: bold ;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; "><i class="fa-solid fa-arrow-left"></i>Back</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <p style="font-size: large;">Are you sure you want to delete this task?<br>
+            "{{task}}"</p>
+        <input class="button" type="submit" value="Delete">
+    
+    </form>
+
+</div>
+
+
+
+
+{% endblock content %}
